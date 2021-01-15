@@ -39,10 +39,12 @@ func main() {
 		links, err := getLinks()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
 		}
 		link, ok := links[r.URL.Path]
 		if !ok {
 			http.Error(w, "link not found", http.StatusBadRequest)
+			return
 		}
 		http.Redirect(w, r, link, http.StatusSeeOther)
 	})
