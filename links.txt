@@ -1,0 +1,2 @@
+/github https://github.com/td0m
+/medium https://medium.com/@td0m
